@@ -52,13 +52,6 @@ const createSession = function (id, description, webhook) {
   console.log('Creating session: ' + id);
   const client = new Client({
     restartOnAuthFail: true,
-    puppeteer: {
-      headless: true,
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-      ],
-    },
     authStrategy: new LocalAuth({
       clientId: id
     }),
